@@ -1,0 +1,12 @@
+# frontend-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: bookstore-api-service
+spec:
+  type: ClusterIP       # Expose the service on the host machine
+  selector:
+    app: bookstore-api
+  ports:
+  - port: 3000
+    targetPort: 3000
