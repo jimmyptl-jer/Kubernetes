@@ -4,9 +4,10 @@ kind: Service
 metadata:
   name: bookstore-client-service
 spec:
-  type: ClusterIP       # Expose the service on the host machine
+  type: NodePort       # Expose the service on the host machine
   selector:
     app: bookstore-client
   ports:
   - port: 8081
     targetPort: 80
+    nodePort: 30001
